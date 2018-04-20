@@ -1,0 +1,55 @@
+<li class="nav-item" *ngIf="!isChild && children !=null && !children.length">
+    <a class="sidebar-link" routerLink="{{href}}">
+        <span class="icon-holder">
+            <i class="{{color}} {{icon}}"></i>
+        </span>
+        <span class="title">{{name}}</span>
+    </a>
+</li>
+<li class="nav-item dropdown" [ngClass]="{'open':isOpen}" *ngIf="!isChild && children !=null && children.length">
+    <a class="dropdown-toggle" href="javascript:void(0);"  (click)="isOpen = !isOpen">
+        <span class="icon-holder">
+            <i class="{{color}} {{icon}}"></i>
+        </span>
+        <span class="title">{{name}}</span>
+        <span class="arrow">
+            <i class="ti-angle-right"></i>
+        </span>
+    </a>
+    <ul class="dropdown-menu" *ngIf="isOpen">
+        <sidebar-element *ngFor="let child of children"
+                         [icon]="child.icon"
+                         [color]="child.color"
+                         [name]="child.name"
+                         [href]="child.href"
+                         [children]="child.children"
+                         [isChild]="true"
+        ></sidebar-element>
+    </ul>
+</li>
+
+
+
+<li class="nav-item" *ngIf="isChild && children !=null && !children.length">
+    <a class="sidebar-link" routerLink="{{href}}">
+        <span>{{name}}</span>
+    </a>
+</li>
+<li class="nav-item dropdown" [ngClass]="{'open':isOpen}" *ngIf="isChild && children !=null && children.length">
+    <a href="javascript:void(0);"  (click)="isOpen = !isOpen">
+        <span>{{name}}</span>
+        <span class="arrow">
+            <i class="ti-angle-right"></i>
+        </span>
+    </a>
+    <ul class="dropdown-menu" *ngIf="isOpen">
+        <sidebar-element *ngFor="let child of children"
+                         [icon]="child.icon"
+                         [color]="child.color"
+                         [name]="child.name"
+                         [href]="child.href"
+                         [children]="child.children"
+                         [isChild]="true"
+        ></sidebar-element>
+    </ul>
+</li>

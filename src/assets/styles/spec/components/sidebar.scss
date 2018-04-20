@@ -201,7 +201,7 @@
     }
   }
 
-  li {
+  li, sidebar-element li {
     position: relative;
 
     &.dropdown {
@@ -260,7 +260,7 @@
     }
   }
 
-  > li {
+  > li, > sidebar-element li{
     &.dropdown {
       ul {
         &.dropdown-menu {

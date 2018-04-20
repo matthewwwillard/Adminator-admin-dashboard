@@ -1,0 +1,18 @@
+<div class="header navbar">
+    <div class="header-container">
+        <ul class="nav-left">
+            <li>
+                <a id='sidebar-toggle' class="sidebar-toggle" (click)="toggleSidebar()">
+                    <i class="ti-menu"></i>
+                </a>
+            </li>
+            <gc-header-search></gc-header-search>
+        </ul>
+        <ul class="nav-right">
+            <!-- NOTIFICATIONS -->
+            <gc-header-notification [elements]="notifications"></gc-header-notification>
+            <!-- USER -->
+            <gc-header-user></gc-header-user>
+        </ul>
+    </div>
+</div>

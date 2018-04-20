@@ -1,0 +1,9 @@
+<li class="search-box">
+    <a class="search-toggle no-pdd-right" href="javascript:void(0);" (click)="toggleSearch()">
+        <i class="search-icon ti-search pdd-right-10" *ngIf="!isOpen"></i>
+        <i class="search-icon-close ti-close pdd-right-10" *ngIf="isOpen"></i>
+    </a>
+</li>
+<li class="search-input">
+    <input class="form-control" type="text" placeholder="Search..." *ngIf="isOpen">
+</li>

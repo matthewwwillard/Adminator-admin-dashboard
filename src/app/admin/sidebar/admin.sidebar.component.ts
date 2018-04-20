@@ -1,0 +1,134 @@
+import {Component} from '@angular/core';
+import {SidebarElements} from '../../shared/components/sidebar/sidebar-element/sidebar-element.component';
+
+@Component(
+    {
+        selector:'gc-admin-sidebar',
+        template:'<gc-sidebar [links]="links" [imageHomeLink]="homelink"></gc-sidebar>'
+    }
+)
+export class SidebarComponent
+{
+    protected homelink:string = '/admin';
+    protected links:SidebarElements[] = [
+        {
+            icon:'ti-home',
+            color:'c-blue-500',
+            name:'Home',
+            href:'/',
+            children:[]
+        },
+        {
+            icon:'ti-email',
+            color:'c-brown-500',
+            name:'Email',
+            href:'/email',
+            children:[]
+        },
+        {
+            icon:'ti-share',
+            color:'c-blue-500',
+            name:'Compose',
+            href:'/compose',
+            children:[]
+        },
+        {
+            icon:'ti-layout-list-thumb',
+            color:'c-orange-500',
+            name:'Tables',
+            href:'',
+            children:[
+                {
+                    icon:'ti-share',
+                    color:'c-blue-500',
+                    name:'Compose',
+                    href:'/compose',
+                    children:[]
+                },
+                {
+                    icon:'',
+                    color:'',
+                    name:'Home',
+                    href:'/',
+                    children:[
+                        {
+                            icon:'',
+                            color:'',
+                            name:'Home',
+                            href:'/',
+                            children:[]
+                        },
+                        {
+                            icon:'',
+                            color:'',
+                            name:'Home',
+                            href:'/',
+                            children:[
+                                {
+                                    icon:'',
+                                    color:'',
+                                    name:'Home',
+                                    href:'/',
+                                    children:[]
+                                },
+                                {
+                                    icon:'',
+                                    color:'',
+                                    name:'Home',
+                                    href:'/',
+                                    children:[
+                                        {
+                                            icon:'',
+                                            color:'',
+                                            name:'Home',
+                                            href:'/',
+                                            children:[]
+                                        },
+                                        {
+                                            icon:'',
+                                            color:'',
+                                            name:'Home',
+                                            href:'/',
+                                            children:[
+                                                {
+                                                    icon:'',
+                                                    color:'',
+                                                    name:'Home',
+                                                    href:'/',
+                                                    children:[]
+                                                },
+                                                {
+                                                    icon:'',
+                                                    color:'',
+                                                    name:'Home',
+                                                    href:'/',
+                                                    children:[
+                                                        {
+                                                            icon:'',
+                                                            color:'',
+                                                            name:'Home',
+                                                            href:'/',
+                                                            children:[]
+                                                        },
+                                                        {
+                                                            icon:'',
+                                                            color:'',
+                                                            name:'Home',
+                                                            href:'/',
+                                                            children:[]
+                                                        },
+                                                    ]
+                                                },
+                                            ]
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                }
+
+            ]
+        }
+    ];
+}

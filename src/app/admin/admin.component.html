@@ -1,0 +1,20 @@
+<div [ngClass]="{'is-collapsed':showFullSidebar}">
+    <!-- #Left Sidebar ==================== -->
+    <gc-admin-sidebar></gc-admin-sidebar>
+
+    <!-- #Main ============================ -->
+    <div class="page-container">
+        <!-- ### $Topbar ### -->
+        <gc-admin-header></gc-admin-header>
+
+        <!-- ### $App Screen Content ### -->
+        <main class='main-content bgc-grey-100'>
+            <div id='mainContent' >
+                <router-outlet></router-outlet>
+            </div>
+        </main>
+
+        <!-- ### $App Screen Footer ### -->
+        <gc-admin-footer></gc-admin-footer>
+    </div>
+</div>
