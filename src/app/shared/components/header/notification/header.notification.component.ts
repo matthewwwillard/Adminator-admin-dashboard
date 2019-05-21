@@ -42,9 +42,9 @@ export class HeaderNotificationComponent
         }
     }
 
-    protected isOpen:boolean = false;
+    public isOpen:boolean = false;
 
-    protected prettyTime(time)
+    public prettyTime(time)
     {
         let now = moment();
         let created = moment(time);

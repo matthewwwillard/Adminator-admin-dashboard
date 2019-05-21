@@ -36,6 +36,6 @@ export class SidebarElementComponent
     @Input()
     isChild:boolean = false;
 
-    protected isOpen:boolean = false;
+    public isOpen:boolean = false;
 
 }

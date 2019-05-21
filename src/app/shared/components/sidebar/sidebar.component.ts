@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {ThemeService} from "../../services/ThemeService";
 
 @Component({
     selector:'gc-sidebar',
@@ -14,4 +15,16 @@ export class SidebarComponent
     appname:string = 'Adminator';
     @Input()
     links:any[];
+    @Input()
+    collapse:boolean = false;
+
+  constructor(private theme:ThemeService) {
+
+  }
+
+  toggleBar()
+  {
+    this.theme.toggleSidebar();
+  }
+
 }

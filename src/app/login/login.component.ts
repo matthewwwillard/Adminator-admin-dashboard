@@ -4,7 +4,7 @@ import {AuthService} from "../shared/services/AuthService";
 import {Router} from "@angular/router";
 
 @Component({
-    selector:'gc-login',
+    selector:'login',
     templateUrl:'./login.component.html'
 })
 export class LoginComponent implements OnInit

@@ -12,8 +12,8 @@ export class HeaderSearchComponent
     @Output()
     searchValue:EventEmitter<string> = new EventEmitter<string>();
 
-    protected isOpen:boolean = false;
-    protected value:string = '';
+    public isOpen:boolean = false;
+    public value:string = '';
 
     onKey(event:any)
     {

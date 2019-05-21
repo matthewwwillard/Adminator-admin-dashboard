@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {JwtHelper} from "angular2-jwt";
+import {UserInfo} from "../components/header/user/header.user.component";
 
 export class User
 {
@@ -35,6 +36,19 @@ export class CurrentUserService
   public SetUser(user:User)
   {
     this.currentLoggedInUser = user;
+  }
+  public GetCurrentUserAsUserInfoObject() : UserInfo
+  {
+    let user = this.GetCurrentUser();
+
+    let userI:UserInfo = {
+      id:user.id,
+      email:"",
+      firstname:user.firstName,
+      lastname:user.lastName,
+      profileImg:'assets/static/images/logo.png'
+    }
+    return userI;
   }
   public GetCurrentUser()
   {

@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, Input, ViewEncapsulation} from '@angular/core';
+import {CurrentUserService} from "../../../services/CurrentUserService";
 
 export interface UserInfo
 {
@@ -34,16 +35,16 @@ export class HeaderUserComponent
     };
     @Input()
     links:UserLinks[] = [
-        {
-            icon:"ti-settings",
-            href:"/settings",
-            name:"Settings"
-        },
-        {
-            icon:"ti-user",
-            href:"/profile",
-            name:"Profile"
-        }
+        // {
+        //     icon:"ti-settings",
+        //     href:"/settings",
+        //     name:"Settings"
+        // },
+        // {
+        //     icon:"ti-user",
+        //     href:"/profile",
+        //     name:"Profile"
+        // }
     ];
     @HostListener('document:click', ['$event'])
     handleClick(event){
@@ -61,6 +62,8 @@ export class HeaderUserComponent
             this.isOpen = false;
         }
     }
-    protected isOpen:boolean = false;
-    constructor(private elementRef:ElementRef){}
+    public isOpen:boolean = false;
+    constructor(private elementRef:ElementRef, private currentUser:CurrentUserService){
+      this.userinfo = this.currentUser.GetCurrentUserAsUserInfoObject();
+    }
 }
